@@ -42,12 +42,7 @@ export function Navbar() {
           }`}
         >
           <a href="#top" className="flex items-center gap-2">
-            <img src={logo} alt="Hanova Life Sciences" className="h-8 sm:h-9 w-auto" />
-            <span className="hidden sm:flex flex-col leading-none">
-              <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
-                Life Sciences
-              </span>
-            </span>
+            <img src={logo} alt="Hanova" className="h-8 sm:h-9 w-auto" />
           </a>
 
           <nav className="hidden md:flex items-center gap-8">

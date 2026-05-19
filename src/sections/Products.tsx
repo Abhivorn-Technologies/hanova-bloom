@@ -4,9 +4,9 @@ import { Autoplay, EffectCoverflow, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
-import butterflyPea from "@/assets/product-butterfly-pea.jpeg";
-import lemon from "@/assets/product-lemon.jpeg";
-import gingerTurmeric from "@/assets/product-ginger-turmeric.jpeg";
+import butterflyPea from "@/assets/product-butterfly-pea.png";
+import lemon from "@/assets/product-lemon.png";
+import gingerTurmeric from "@/assets/product-ginger-turmeric.png";
 
 const products = [
   {
