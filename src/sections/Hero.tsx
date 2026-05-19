@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import logo from "@/assets/hanova-logo.png";
+import heroProduct from "@/assets/product-butterfly-pea.jpeg";
 
 export function Hero() {
   return (
@@ -101,27 +101,19 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="relative aspect-square max-w-md mx-auto"
+            className="relative aspect-square max-w-sm sm:max-w-md mx-auto"
           >
-            {/* Honey jar visual */}
-            <div className="absolute inset-0 rounded-[40%_60%_55%_45%/55%_45%_60%_40%] bg-honey-gradient shadow-honey animate-float-slow" />
+            <div className="absolute inset-4 rounded-[40%_60%_55%_45%/55%_45%_60%_40%] bg-honey-gradient shadow-honey animate-float-slow opacity-80" />
             <div
-              className="absolute inset-6 rounded-[50%_45%_55%_50%/45%_55%_45%_55%] bg-gradient-to-br from-cream to-sand opacity-90 animate-float-slow"
+              className="absolute inset-10 rounded-[50%_45%_55%_50%/45%_55%_45%_55%] bg-gradient-to-br from-cream to-sand opacity-70 animate-float-slow"
               style={{ animationDelay: "1.5s" }}
             />
-            <div className="absolute inset-0 grid place-items-center">
-              <img src={logo} alt="Hanova" className="w-3/4 drop-shadow-xl" />
-            </div>
-            {/* Drips */}
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-2 left-10 w-6 h-10 rounded-full bg-honey-deep"
-            />
-            <motion.div
-              animate={{ y: [0, 18, 0] }}
-              transition={{ duration: 3.6, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
-              className="absolute -bottom-4 right-16 w-4 h-7 rounded-full bg-honey"
+            <motion.img
+              src={heroProduct}
+              alt="Hanova Butterfly Pea Infused Honey sachet"
+              animate={{ y: [0, -14, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              className="relative z-10 w-full h-full object-contain drop-shadow-2xl"
             />
           </motion.div>
         </div>
