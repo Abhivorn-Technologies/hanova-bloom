@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
-import heroProduct from "@/assets/product-butterfly-pea.jpeg";
+import heroProduct from "@/assets/product-lemon.png";
+import heroProductAlt from "@/assets/product-ginger-turmeric.png";
+import heroProductThird from "@/assets/product-butterfly-pea.png";
 
 export function Hero() {
   return (
