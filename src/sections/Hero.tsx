@@ -110,12 +110,30 @@ export function Hero() {
               className="absolute inset-10 rounded-[50%_45%_55%_50%/45%_55%_45%_55%] bg-gradient-to-br from-cream to-sand opacity-70 animate-float-slow"
               style={{ animationDelay: "1.5s" }}
             />
+
+            {/* Side sachets */}
+            <motion.img
+              src={heroProductThird}
+              alt="Hanova Butterfly Pea Infused Honey"
+              animate={{ y: [0, -10, 0], rotate: [-12, -10, -12] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute left-0 bottom-6 w-28 sm:w-36 object-contain drop-shadow-2xl z-10 -rotate-12"
+            />
+            <motion.img
+              src={heroProductAlt}
+              alt="Hanova Ginger Lemon Turmeric Honey"
+              animate={{ y: [0, -10, 0], rotate: [12, 14, 12] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              className="absolute right-0 bottom-6 w-28 sm:w-36 object-contain drop-shadow-2xl z-10 rotate-12"
+            />
+
+            {/* Featured yellow lemon sachet */}
             <motion.img
               src={heroProduct}
-              alt="Hanova Butterfly Pea Infused Honey sachet"
+              alt="Hanova Lemon Infused Honey sachet"
               animate={{ y: [0, -14, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="relative z-10 w-full h-full object-contain drop-shadow-2xl"
+              className="relative z-20 mx-auto h-full w-auto max-h-[28rem] object-contain drop-shadow-2xl"
             />
           </motion.div>
         </div>
