@@ -1,7 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Navbar } from "@/components/Navbar";
-import { ScrollProgress } from "@/components/ScrollProgress";
-import { FloatingButtons } from "@/components/FloatingButtons";
+import { Layout } from "@/components/Layout";
 import { Hero } from "@/sections/Hero";
 import { About } from "@/sections/About";
 import { Philosophy } from "@/sections/Philosophy";
@@ -10,8 +8,6 @@ import { Products } from "@/sections/Products";
 import { Experience } from "@/sections/Experience";
 import { Process } from "@/sections/Process";
 import { Testimonials } from "@/sections/Testimonials";
-import { Contact } from "@/sections/Contact";
-import { Footer } from "@/sections/Footer";
 import { HoneyDivider } from "@/components/HoneyDivider";
 
 export const Route = createFileRoute("/")({
@@ -22,7 +18,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Premium functional honey & plant-based nutraceuticals from Hanova Life Sciences. Crafted with nature and science for modern everyday wellness.",
+          "Premium functional honey sachets from Hanova Life Sciences. Plant-based wellness — convenience × hygiene × instant outcomes.",
       },
       { property: "og:title", content: "Hanova Life Sciences" },
       {
@@ -37,9 +33,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main className="overflow-x-hidden">
-      <ScrollProgress />
-      <Navbar />
+    <Layout>
       <Hero />
       <About />
       <HoneyDivider color="#F5E8C7" />
@@ -50,9 +44,6 @@ function Index() {
       <HoneyDivider color="#F5E8C7" flip />
       <Process />
       <Testimonials />
-      <Contact />
-      <Footer />
-      <FloatingButtons />
-    </main>
+    </Layout>
   );
 }
