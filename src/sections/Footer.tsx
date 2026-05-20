@@ -1,5 +1,5 @@
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import logo from "@/assets/hanova-logo.png";
 import honey from "@/assets/honey-drip.jpg";
 import lemon from "@/assets/lemon-honey.jpg";
