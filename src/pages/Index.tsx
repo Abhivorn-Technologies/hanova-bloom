@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { useEffect } from "react";
 import { Layout } from "@/components/Layout";
 import { Hero } from "@/sections/Hero";
 import { About } from "@/sections/About";
@@ -10,28 +10,10 @@ import { Process } from "@/sections/Process";
 import { Testimonials } from "@/sections/Testimonials";
 import { HoneyDivider } from "@/components/HoneyDivider";
 
-export const Route = createFileRoute("/")({
-  component: Index,
-  head: () => ({
-    meta: [
-      { title: "Hanova Life Sciences — Nature, Simplified for Everyday Life" },
-      {
-        name: "description",
-        content:
-          "Premium functional honey sachets from Hanova Life Sciences. Plant-based wellness — convenience × hygiene × instant outcomes.",
-      },
-      { property: "og:title", content: "Hanova Life Sciences" },
-      {
-        property: "og:description",
-        content: "Premium functional wellness crafted with nature and science.",
-      },
-      { property: "og:type", content: "website" },
-    ],
-    links: [{ rel: "canonical", href: "/" }],
-  }),
-});
-
-function Index() {
+export default function Index() {
+  useEffect(() => {
+    document.title = "Hanova Life Sciences — Nature, Simplified for Everyday Life";
+  }, []);
   return (
     <Layout>
       <Hero />

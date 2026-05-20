@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Layout, PageHeader } from "@/components/Layout";
 import butterflyPea from "@/assets/product-butterfly-pea.png";
@@ -32,23 +33,10 @@ const products = [
   },
 ];
 
-export const Route = createFileRoute("/products")({
-  component: ProductsPage,
-  head: () => ({
-    meta: [
-      { title: "Products — Hanova Functional Honey Sachets" },
-      {
-        name: "description",
-        content:
-          "Premium plant-based functional honey sachets — Butterfly Pea, Lemon, and Ginger-Turmeric. Instant wellness in 8g.",
-      },
-      { property: "og:title", content: "Hanova Functional Honey Sachets" },
-      { property: "og:description", content: "Selling outcomes, not blends." },
-    ],
-  }),
-});
-
-function ProductsPage() {
+export default function Products() {
+  useEffect(() => {
+    document.title = "Products — Hanova Functional Honey Sachets";
+  }, []);
   return (
     <Layout>
       <PageHeader
@@ -83,9 +71,7 @@ function ProductsPage() {
                 />
               </div>
               <div>
-                <p className="text-xs tracking-[0.35em] uppercase text-honey-deep font-semibold">
-                  {p.tag}
-                </p>
+                <p className="text-xs tracking-[0.35em] uppercase text-honey-deep font-semibold">{p.tag}</p>
                 <h2 className="mt-3 text-3xl sm:text-5xl text-charcoal">{p.name}</h2>
                 <p className="mt-4 text-muted-foreground text-lg">{p.desc}</p>
                 <ul className="mt-6 space-y-2">
@@ -114,8 +100,7 @@ function ProductsPage() {
             100% Natural. <span className="text-gradient-honey italic">No added sugar.</span>
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Every Hanova sachet is plant-based, single-serve, and engineered for outcomes —
-            not just ingredients.
+            Every Hanova sachet is plant-based, single-serve, and engineered for outcomes — not just ingredients.
           </p>
         </div>
       </section>

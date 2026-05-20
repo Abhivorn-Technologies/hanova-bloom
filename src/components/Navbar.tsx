@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { Link } from "@tanstack/react-router";
+import { Link, NavLink } from "react-router-dom";
 import logo from "@/assets/hanova-logo.png";
 
 const links = [
@@ -41,16 +41,19 @@ export function Navbar() {
 
           <nav className="hidden md:flex items-center gap-8">
             {links.map((l) => (
-              <Link
+              <NavLink
                 key={l.to}
                 to={l.to}
-                activeOptions={{ exact: true }}
-                activeProps={{ className: "text-honey-deep" }}
-                className="text-sm font-medium text-charcoal/80 hover:text-honey-deep transition-colors relative group"
+                end
+                className={({ isActive }) =>
+                  `text-sm font-medium hover:text-honey-deep transition-colors relative group ${
+                    isActive ? "text-honey-deep" : "text-charcoal/80"
+                  }`
+                }
               >
                 {l.label}
                 <span className="absolute left-0 -bottom-1 h-px w-0 bg-honey group-hover:w-full transition-all duration-300" />
-              </Link>
+              </NavLink>
             ))}
           </nav>
 
