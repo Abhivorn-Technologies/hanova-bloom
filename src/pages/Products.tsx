@@ -5,6 +5,8 @@ import { Layout, PageHeader } from "@/components/Layout";
 import butterflyPea from "@/assets/product-butterfly-pea.png";
 import lemon from "@/assets/product-lemon.png";
 import gingerTurmeric from "@/assets/product-ginger-turmeric.png";
+import productsHeroBg from "@/assets/products-hero-bg.png";
+import hanovaTumbler from "@/assets/hanova-tumbler.png";
 
 const products = [
   {
@@ -41,8 +43,14 @@ export default function Products() {
     <Layout>
       <PageHeader
         eyebrow="Our Products"
-        title="Functional honey, redefined."
+        title={
+          <>
+            Functional honey,{" "}
+            <span className="text-gradient-honey italic font-serif">redefined.</span>
+          </>
+        }
         subtitle="A curated collection of plant-forward honey concentrates — each crafted for a specific moment in your day."
+        bgImage={productsHeroBg}
       />
 
       <section className="py-20 sm:py-28">
@@ -82,26 +90,56 @@ export default function Products() {
                     </li>
                   ))}
                 </ul>
-                <Link
-                  to="/contact"
+                <a
+                  href={`https://api.whatsapp.com/send?phone=919182609080&text=${encodeURIComponent(
+                    `Hi Hanova! 👋\n\nI came across your website and I'm very interested in inquiring about the *${p.name}* (${p.tag}) wellness honey sachets. 🍯✨\n\nCould you please share more details about pricing and availability?\n\nLooking forward to hearing from you!`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-8 inline-flex items-center gap-2 rounded-full bg-honey-gradient text-charcoal px-6 py-3 font-semibold shadow-honey hover:scale-[1.03] transition-transform"
                 >
                   Enquire now →
-                </Link>
+                </a>
               </div>
             </motion.article>
           ))}
         </div>
       </section>
 
-      <section className="py-16 bg-cream">
-        <div className="mx-auto max-w-4xl px-4 text-center">
-          <h2 className="text-3xl sm:text-5xl text-charcoal">
-            100% Natural. <span className="text-gradient-honey italic">No added sugar.</span>
-          </h2>
-          <p className="mt-4 text-muted-foreground">
-            Every Hanova sachet is plant-based, single-serve, and engineered for outcomes — not just ingredients.
-          </p>
+      <section className="py-20 bg-cream">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 grid md:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -25 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="space-y-6 text-left"
+          >
+            <h2 className="text-3xl sm:text-5xl text-charcoal leading-tight">
+              100% Natural. <br />
+              <span className="text-gradient-honey italic font-serif">No added sugar.</span>
+            </h2>
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              Every Hanova sachet is plant-based, single-serve, and engineered for outcomes — not just ingredients. Drop it directly into your favorite hot tea, water, or blend, and experience instant wellness with zero mess.
+            </p>
+            <div className="flex flex-wrap gap-3 pt-2">
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-honey-deep bg-honey/10 border border-honey/20 px-3.5 py-2 rounded-full">
+                🌿 Plant-Forward Formulation
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-honey-deep bg-honey/10 border border-honey/20 px-3.5 py-2 rounded-full">
+                ⚡ Instant Everyday Ritual
+              </span>
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 15 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="aspect-square max-w-sm sm:max-w-md w-full mx-auto rounded-[2.5rem] overflow-hidden shadow-2xl border border-honey/10 hover:scale-[1.01] transition-transform duration-500 bg-white"
+          >
+            <img src={hanovaTumbler} alt="Hanova Active Tumbler Infusion" className="w-full h-full object-cover" loading="lazy" />
+          </motion.div>
         </div>
       </section>
     </Layout>

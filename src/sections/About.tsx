@@ -1,5 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import aboutHoney from "@/assets/about-honey.png";
+import hanovaTube from "@/assets/hanova-tube.png";
 
 function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -35,20 +37,24 @@ export function About() {
           transition={{ duration: 0.8 }}
           className="relative"
         >
-          <div className="aspect-[4/5] rounded-[3rem] overflow-hidden relative bg-gradient-to-br from-cream via-sand to-honey/60">
-            <div className="absolute inset-0 grid place-items-center">
-              <div className="w-3/4 aspect-square rounded-full bg-honey-gradient opacity-90 blur-2xl" />
-            </div>
-            <div className="absolute inset-0 grid place-items-center">
-              <div className="text-center">
-                <div className="font-display text-7xl md:text-8xl text-charcoal/90">H</div>
-                <div className="mt-2 text-xs tracking-[0.4em] uppercase text-charcoal/70">
-                  Hanova
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="absolute -bottom-8 -right-6 glass rounded-3xl p-6 shadow-xl max-w-[200px]">
+          {/* Main Honey Image */}
+          <img
+            src={aboutHoney}
+            alt="Hanova Premium Honey"
+            className="w-full h-[380px] sm:h-[450px] object-cover rounded-[3rem] hover:scale-[1.02] transition-transform duration-500 shadow-lg border border-white/40"
+          />
+
+          {/* Floating Hanova Sachet Tube Overlay */}
+          <motion.div
+            animate={{ y: [0, -12, 0], rotate: [-4, 4, -4] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -top-10 -left-6 w-32 sm:w-44 aspect-square rounded-[2rem] bg-gradient-to-br from-cream to-sand/40 backdrop-blur border border-white/80 p-3 shadow-2xl hidden sm:flex items-center justify-center z-10 hover:scale-105 transition-transform"
+          >
+            <img src={hanovaTube} alt="Hanova Premium Sachet Tube" className="w-full h-full object-contain drop-shadow-xl" />
+          </motion.div>
+
+          {/* Hyderabad Info Badge */}
+          <div className="absolute -bottom-8 -right-6 glass rounded-3xl p-6 shadow-xl max-w-[200px] z-10">
             <div className="text-xs uppercase tracking-widest text-muted-foreground">Crafted in</div>
             <div className="font-display text-xl text-charcoal mt-1">Hyderabad, India</div>
           </div>

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import heroProduct from "@/assets/product-lemon.png";
 import heroProductAlt from "@/assets/product-ginger-turmeric.png";
 import heroProductThird from "@/assets/product-butterfly-pea.png";
@@ -38,7 +39,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.1 }}
-            className="mt-6 text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] text-charcoal"
+            className="mt-6 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-[1.1] text-charcoal"
           >
             Nature{" "}
             <span className="text-gradient-honey italic">Simplified</span>
@@ -69,12 +70,12 @@ export function Hero() {
               Explore Products
               <span className="transition-transform group-hover:translate-x-1">→</span>
             </a>
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="inline-flex items-center gap-2 rounded-full border border-charcoal/15 bg-white/70 backdrop-blur px-7 py-4 font-medium text-charcoal hover:bg-charcoal hover:text-cream transition-colors"
             >
               Contact Us
-            </a>
+            </Link>
           </motion.div>
 
           <motion.div

@@ -57,12 +57,14 @@ export function Navbar() {
             ))}
           </nav>
 
-          <Link
-            to="/contact"
-            className="hidden md:inline-flex items-center justify-center rounded-full bg-charcoal text-cream px-5 py-2.5 text-sm font-medium hover:bg-honey hover:text-charcoal transition-colors"
+          <a
+            href="https://api.whatsapp.com/send?phone=919182609080&text=Hi%20Hanova%21%20%F0%9F%91%8B%0A%0AI%20came%20across%20your%20website%20and%20I%27m%20really%20interested%20in%20your%20premium%20honey%20wellness%20products.%20%F0%9F%8D%AF%0A%0ACould%20you%20please%20share%20more%20details%20about%20the%20available%20products%2C%20pricing%2C%20and%20how%20I%20can%20place%20an%20order%3F%0A%0ALooking%20forward%20to%20hearing%20from%20you%21"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline-flex items-center gap-2 justify-center rounded-full bg-charcoal text-cream px-5 py-2.5 text-sm font-medium hover:bg-honey hover:text-charcoal transition-colors"
           >
-            Get in touch
-          </Link>
+            Order Now
+          </a>
 
           <button
             className="md:hidden p-2 rounded-full bg-charcoal/5"
@@ -92,13 +94,15 @@ export function Navbar() {
                     {l.label}
                   </Link>
                 ))}
-                <Link
-                  to="/contact"
+                <a
+                  href="https://api.whatsapp.com/send?phone=919182609080&text=Hi%20Hanova%21%20%F0%9F%91%8B%0A%0AI%20came%20across%20your%20website%20and%20I%27m%20really%20interested%20in%20your%20premium%20honey%20wellness%20products.%20%F0%9F%8D%AF%0A%0ACould%20you%20please%20share%20more%20details%20about%20the%20available%20products%2C%20pricing%2C%20and%20how%20I%20can%20place%20an%20order%3F%0A%0ALooking%20forward%20to%20hearing%20from%20you%21"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
-                  className="mt-2 inline-flex justify-center rounded-full bg-charcoal text-cream px-5 py-3 text-sm font-medium"
+                  className="mt-2 inline-flex justify-center rounded-full bg-charcoal text-cream px-5 py-3 text-sm font-medium hover:bg-honey hover:text-charcoal transition-colors"
                 >
-                  Get in touch
-                </Link>
+                  Order Now
+                </a>
               </div>
             </motion.div>
           )}

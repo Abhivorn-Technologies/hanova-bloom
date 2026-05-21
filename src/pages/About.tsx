@@ -4,6 +4,8 @@ import { Layout, PageHeader } from "@/components/Layout";
 import honey from "@/assets/honey-drip.jpg";
 import bee from "@/assets/bee-flower.jpg";
 import lemon from "@/assets/lemon-honey.jpg";
+import aboutHeroBg from "@/assets/about-hero-bg.png";
+import hanovaCard from "@/assets/hanova-card.jpg";
 
 export default function About() {
   useEffect(() => {
@@ -13,8 +15,16 @@ export default function About() {
     <Layout>
       <PageHeader
         eyebrow="Introduction"
-        title="Wellness must be portable, instant, and reliable."
-        subtitle="Hanova is a new generation functional honey brand built around the modern reality — busy lifestyles demand instant, hygienic, single-serve wellness."
+        title={
+          <>
+            Wellness must be{" "}
+            <span className="text-gradient-honey italic font-serif">portable, instant,</span> and{" "}
+            <span className="text-gradient-honey italic font-serif">reliable.</span>
+          </>
+        }
+        subtitle="Hanova is a new generation functional honey sachet brand built around the modern reality — busy lifestyles demand instant, hygienic, single-serve wellness."
+        className="pt-28 sm:pt-36 pb-12 sm:pb-14"
+        bgImage={aboutHeroBg}
       />
 
       <section className="py-20 sm:py-28">
@@ -33,20 +43,31 @@ export default function About() {
           ))}
         </div>
 
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 mt-20 grid md:grid-cols-2 gap-12">
-          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl sm:text-4xl text-charcoal">Our Vision</h2>
-            <p className="mt-4 text-muted-foreground">
-              To become the most trusted functional honey sachet brand — bridging mass accessibility and premium
-              wellness. People don't reject honey. They reject effort, mess, and inconsistency.
-            </p>
-          </motion.div>
-          <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl sm:text-4xl text-charcoal">Our Mission</h2>
-            <p className="mt-4 text-muted-foreground">
-              Honey concentrated with functional ingredients — engineered for instant energy, weight-management
-              support, immunity, and everyday rituals that fit into modern life.
-            </p>
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 mt-20 grid md:grid-cols-12 gap-12 items-center">
+          <div className="md:col-span-7 space-y-12">
+            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+              <h2 className="text-3xl sm:text-4xl text-charcoal">Our Vision</h2>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                To become the most trusted functional honey sachet brand — bridging mass accessibility and premium
+                wellness. People don't reject honey. They reject effort, mess, and inconsistency.
+              </p>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }}>
+              <h2 className="text-3xl sm:text-4xl text-charcoal">Our Mission</h2>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                Honey concentrated with functional ingredients — engineered for instant energy, weight-management
+                support, immunity, and everyday rituals that fit into modern life.
+              </p>
+            </motion.div>
+          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="md:col-span-5 aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border border-honey/15 hover:scale-[1.01] transition-transform duration-500 bg-white"
+          >
+            <img src={hanovaCard} alt="Hanova Premium Product Cards" className="w-full h-full object-cover" loading="lazy" />
           </motion.div>
         </div>
       </section>

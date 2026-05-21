@@ -1,8 +1,19 @@
 import { motion } from "framer-motion";
+import focusImg from "@/assets/focus-outcome.png";
+import calmImg from "@/assets/calm-outcome.png";
+import energyImg from "@/assets/energy-outcome.png";
+import glowImg from "@/assets/glow-outcome.png";
+
+const outcomes = [
+  { label: "Focus", img: focusImg },
+  { label: "Calm", img: calmImg },
+  { label: "Energy", img: energyImg },
+  { label: "Glow", img: glowImg }
+];
 
 export function Experience() {
   return (
-    <section className="relative py-28 sm:py-40 overflow-hidden">
+    <section className="relative py-28 sm:py-40 overflow-hidden bg-cream/20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 grid lg:grid-cols-12 gap-12 items-center">
         <div className="lg:col-span-7">
           <motion.p
@@ -48,16 +59,33 @@ export function Experience() {
             transition={{ duration: 0.9 }}
             className="grid grid-cols-2 gap-4"
           >
-            {["Focus", "Calm", "Energy", "Glow"].map((label, i) => (
+            {outcomes.map((item, i) => (
               <div
-                key={label}
-                className={`relative aspect-[3/4] rounded-3xl overflow-hidden ${
+                key={item.label}
+                className={`relative aspect-[3/4] rounded-3xl overflow-hidden group shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1 ${
                   i % 2 === 0 ? "translate-y-6" : ""
                 }`}
               >
-                <div className={`absolute inset-0 ${i === 0 ? "bg-gradient-to-br from-botanical/60 to-honey/80" : i === 1 ? "bg-gradient-to-br from-lavender/60 to-cream" : i === 2 ? "bg-honey-gradient" : "bg-gradient-to-br from-sand to-honey-deep/70"}`} />
-                <div className="absolute inset-0 grid place-items-end p-5">
-                  <span className="font-display text-3xl text-charcoal/90">{label}</span>
+                {/* Background Image */}
+                <img 
+                  src={item.img} 
+                  alt={item.label} 
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                />
+
+                {/* Dark Overlay Gradient for text readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-honey/20 to-transparent mix-blend-overlay" />
+
+                {/* Text Content */}
+                <div className="absolute inset-0 p-5 flex flex-col justify-between z-10">
+                  <span className="text-[10px] uppercase tracking-widest text-honey font-bold">
+                    0{i + 1}
+                  </span>
+                  <span className="font-display text-3xl text-white group-hover:text-honey transition-colors duration-300">
+                    {item.label}
+                  </span>
                 </div>
               </div>
             ))}
