@@ -30,13 +30,6 @@ const products = [
     image: gingerTurmeric,
     glow: "from-orange-400/40 to-honey-deep/40",
   },
-  {
-    name: "Butterfly Pea Infused Honey",
-    tag: "Calm & Clarity",
-    desc: "Portable instant wellness — 8g of plant-forward honey concentrate.",
-    image: butterflyPea,
-    glow: "from-indigo-500/40 to-honey/30",
-  },
 ];
 
 export function Products() {
@@ -98,8 +91,8 @@ export function Products() {
             pagination={{ clickable: true }}
             className="!pb-14"
           >
-            {/* Duplicate the array to ensure Swiper has enough slides (>= slidesPerView * 2) to loop seamlessly without empty spaces */}
-            {[...products, ...products].map((p, i) => (
+            {/* Triple the array (3 unique products * 3 = 9 slides) to ensure Swiper loops seamlessly and continuously without empty space */}
+            {[...products, ...products, ...products].map((p, i) => (
               <SwiperSlide key={`${p.name}-${i}`} className="!h-auto">
                 <div className="group relative rounded-3xl overflow-hidden bg-gradient-to-br from-white/5 to-white/0 border border-white/10 p-5 sm:p-6 h-full hover:border-honey/40 transition-colors">
                   <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-gradient-to-br from-white/10 to-white/0">

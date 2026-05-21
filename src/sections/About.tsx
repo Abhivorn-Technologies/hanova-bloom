@@ -1,7 +1,12 @@
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import aboutHoney from "@/assets/about-honey.png";
-import hanovaTube from "@/assets/hanova-tube.png";
+import productGingerTurmeric from "@/assets/product-ginger-turmeric.png";
+import productButterflyPea from "@/assets/product-butterfly-pea.png";
+import productLemon from "@/assets/product-lemon.png";
+
+const floatingProducts = [productGingerTurmeric, productButterflyPea, productLemon];
+const floatingAlts = ["Ginger Turmeric", "Butterfly Pea", "Lemon Honey"];
 
 function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -27,6 +32,15 @@ function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
 }
 
 export function About() {
+  const [productIndex, setProductIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setProductIndex((prev) => (prev + 1) % floatingProducts.length);
+    }, 2500);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section id="about" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 grid lg:grid-cols-2 gap-16 items-center">
@@ -37,26 +51,63 @@ export function About() {
           transition={{ duration: 0.8 }}
           className="relative"
         >
-          {/* Main Honey Image */}
-          <img
-            src={aboutHoney}
-            alt="Hanova Premium Honey"
-            className="w-full h-[380px] sm:h-[450px] object-cover rounded-[3rem] hover:scale-[1.02] transition-transform duration-500 shadow-lg border border-white/40"
-          />
+          {/* Full-width Honey Image */}
+          <div className="relative overflow-hidden rounded-[2.5rem] shadow-lg border border-white/40">
+            <img
+              src={aboutHoney}
+              alt="Hanova Premium Honey"
+              className="w-full h-[380px] sm:h-[460px] object-cover hover:scale-[1.02] transition-transform duration-700"
+            />
 
-          {/* Floating Hanova Sachet Tube Overlay */}
-          <motion.div
-            animate={{ y: [0, -12, 0], rotate: [-4, 4, -4] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -top-10 -left-6 w-32 sm:w-44 aspect-square rounded-[2rem] bg-gradient-to-br from-cream to-sand/40 backdrop-blur border border-white/80 p-3 shadow-2xl hidden sm:flex items-center justify-center z-10 hover:scale-105 transition-transform"
-          >
-            <img src={hanovaTube} alt="Hanova Premium Sachet Tube" className="w-full h-full object-contain drop-shadow-xl" />
-          </motion.div>
+            {/* Sachet overlay — inside image, left side */}
+            <div className="absolute top-6 left-6 flex flex-col items-center z-10">
 
-          {/* Hyderabad Info Badge */}
-          <div className="absolute -bottom-8 -right-6 glass rounded-3xl p-6 shadow-xl max-w-[200px] z-10">
-            <div className="text-xs uppercase tracking-widest text-muted-foreground">Crafted in</div>
-            <div className="font-display text-xl text-charcoal mt-1">Hyderabad, India</div>
+              {/* Pure Honey badge */}
+              <div className="px-3 py-1.5 rounded-full bg-white/80 backdrop-blur-sm border border-amber-200 shadow-sm">
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-amber-700">
+                  Pure Honey
+                </span>
+              </div>
+
+              {/* Drip stem */}
+              <div className="w-px h-7 bg-gradient-to-b from-amber-400 to-amber-500/70" />
+
+              {/* Animated honey drop */}
+              <motion.div
+                className="w-2 rounded-full bg-amber-400"
+                animate={{ height: ["4px", "12px", "4px"], opacity: [0, 1, 0], y: [0, 0, 12] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeIn", repeatDelay: 1 }}
+              />
+
+              {/* Floating sachet */}
+              <motion.div
+                animate={{ y: [0, -7, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                className="relative mt-1 w-32 sm:w-40"
+              >
+                <div className="absolute -bottom-1 inset-x-3 h-3 bg-amber-400/20 blur-md rounded-full" />
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={productIndex}
+                    src={floatingProducts[productIndex]}
+                    alt={floatingAlts[productIndex]}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.9, ease: "easeInOut" }}
+                    className="w-full object-contain drop-shadow-2xl"
+                  />
+                </AnimatePresence>
+              </motion.div>
+
+
+            </div>
+
+            {/* Hyderabad badge — inside image, bottom right */}
+            <div className="absolute bottom-5 right-5 bg-white/80 backdrop-blur-sm rounded-2xl px-5 py-3 shadow-md z-10">
+              <div className="text-[10px] uppercase tracking-widest text-stone-400">Crafted in</div>
+              <div className="font-display text-base text-charcoal mt-0.5">Hyderabad, India</div>
+            </div>
           </div>
         </motion.div>
 

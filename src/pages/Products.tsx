@@ -42,11 +42,11 @@ export default function Products() {
   return (
     <Layout>
       <PageHeader
-        eyebrow="Our Products"
+        eyebrow="Ancient Infusion"
         title={
           <>
-            Functional honey,{" "}
-            <span className="text-gradient-honey italic font-serif">redefined.</span>
+            Modern,{" "}
+            <span className="text-gradient-honey italic font-serif">Wellness.</span>
           </>
         }
         subtitle="A curated collection of plant-forward honey concentrates — each crafted for a specific moment in your day."
@@ -62,9 +62,8 @@ export default function Products() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8 }}
-              className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-center ${
-                i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
-              }`}
+              className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-center ${i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
+                }`}
             >
               <div className="relative">
                 <div

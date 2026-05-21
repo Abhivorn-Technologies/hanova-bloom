@@ -90,8 +90,9 @@ export default function About() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="rounded-2xl bg-white p-6 shadow-sm border border-charcoal/5"
+                transition={{ delay: i * 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -6, scale: 1.02 }}
+                className="rounded-2xl bg-white p-6 shadow-sm border border-charcoal/5 hover:border-honey/40 hover:shadow-[0_15px_30px_rgba(224,163,0,0.12)] transition-all duration-300 cursor-pointer"
               >
                 <div className="text-honey-deep font-semibold text-sm">{c.t}</div>
                 <p className="mt-3 text-sm text-muted-foreground">{c.d}</p>

@@ -1,25 +1,52 @@
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import heroProduct from "@/assets/product-lemon.png";
 import heroProductAlt from "@/assets/product-ginger-turmeric.png";
 import heroProductThird from "@/assets/product-butterfly-pea.png";
+import heroBg from "@/assets/hero-bg.png";
+
 
 export function Hero() {
+  const [step, setStep] = useState(0);
+
+  useEffect(() => {
+    const t = setInterval(() => setStep((s) => (s + 1) % 3), 3200);
+    return () => clearInterval(t);
+  }, []);
+
+  // slot = (i + step) % 3 → 0=Center, 1=Left, 2=Right
+  const getSlot = (i: number) => (i + step) % 3;
+
   return (
     <section id="top" className="relative min-h-screen pt-28 pb-20 overflow-hidden">
+      {/* Hero Background Image */}
+      <div className="absolute inset-0 -z-20">
+        <img
+          src={heroBg}
+          alt=""
+          aria-hidden
+          className="w-full h-full object-cover object-center"
+        />
+        {/* Gradient overlay: left side stays readable, right fades to transparent */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#fdf6e3]/92 via-[#fdf6e3]/70 to-[#fdf6e3]/20" />
+        {/* Bottom fade for smooth section transition */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#fdf6e3] to-transparent" />
+      </div>
+
       {/* Floating honey drops */}
       <motion.div
         aria-hidden
-        className="absolute -top-10 -left-10 w-72 h-72 rounded-full bg-honey/30 blur-3xl animate-float-slow"
+        className="absolute -top-10 -left-10 w-72 h-72 rounded-full bg-honey/20 blur-3xl animate-float-slow"
       />
       <motion.div
         aria-hidden
-        className="absolute top-40 -right-16 w-96 h-96 rounded-full bg-sand/40 blur-3xl animate-float-slow"
+        className="absolute top-40 -right-16 w-96 h-96 rounded-full bg-sand/20 blur-3xl animate-float-slow"
         style={{ animationDelay: "2s" }}
       />
       <motion.div
         aria-hidden
-        className="absolute bottom-0 left-1/3 w-80 h-80 rounded-full bg-cream blur-3xl animate-float-slow"
+        className="absolute bottom-0 left-1/3 w-80 h-80 rounded-full bg-cream/50 blur-3xl animate-float-slow"
         style={{ animationDelay: "4s" }}
       />
 
@@ -112,30 +139,36 @@ export function Hero() {
               style={{ animationDelay: "1.5s" }}
             />
 
-            {/* Side sachets */}
-            <motion.img
-              src={heroProductThird}
-              alt="Hanova Butterfly Pea Infused Honey"
-              animate={{ y: [0, -10, 0], rotate: [-12, -10, -12] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute left-0 bottom-6 w-28 sm:w-36 object-contain drop-shadow-2xl z-10 -rotate-12"
-            />
-            <motion.img
-              src={heroProductAlt}
-              alt="Hanova Ginger Lemon Turmeric Honey"
-              animate={{ y: [0, -10, 0], rotate: [12, 14, 12] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute right-0 bottom-6 w-28 sm:w-36 object-contain drop-shadow-2xl z-10 rotate-12"
-            />
-
-            {/* Featured yellow lemon sachet */}
-            <motion.img
-              src={heroProduct}
-              alt="Hanova Lemon Infused Honey sachet"
-              animate={{ y: [0, -14, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="relative z-20 mx-auto h-full w-auto max-h-[28rem] object-contain drop-shadow-2xl"
-            />
+            {/* Carousel: center→left, left→right, right→center */}
+            {[
+              { src: heroProduct,      alt: "Hanova Lemon Infused Honey" },
+              { src: heroProductThird, alt: "Hanova Butterfly Pea Honey" },
+              { src: heroProductAlt,   alt: "Hanova Ginger Turmeric Honey" },
+            ].map((p, i) => {
+              const slot = getSlot(i);
+              const isCenter = slot === 0;
+              const isLeft   = slot === 1;
+              return (
+                <motion.img
+                  key={p.alt}
+                  src={p.src}
+                  alt={p.alt}
+                  animate={{
+                    x: isCenter ? 0 : isLeft ? -118 : 118,
+                    y: isCenter ? 0 : 52,
+                    scale: isCenter ? 1 : 0.58,
+                    rotate: isCenter ? 0 : isLeft ? -12 : 12,
+                    opacity: 1,
+                  }}
+                  transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+                  className="absolute bottom-6 left-1/2 h-full w-auto max-h-[28rem] object-contain drop-shadow-2xl"
+                  style={{
+                    translateX: "-50%",
+                    zIndex: isCenter ? 20 : 10,
+                  }}
+                />
+              );
+            })}
           </motion.div>
         </div>
       </div>
