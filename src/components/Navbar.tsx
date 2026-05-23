@@ -32,12 +32,11 @@ export function Navbar() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div
-          className={`flex items-center justify-between rounded-full px-4 sm:px-6 py-3 transition-all duration-500 ${
-            scrolled ? "glass shadow-lg" : "bg-white/40 backdrop-blur"
-          }`}
+          className={`flex items-center justify-between rounded-full px-4 sm:px-6 py-3 transition-all duration-500 ${scrolled ? "glass shadow-lg" : "bg-white/40 backdrop-blur"
+            }`}
         >
           <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="Hanova" className="h-8 sm:h-10 w-auto" />
+            <img src={logo} alt="Hanova" className="h-6 sm:h-8 w-auto" />
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -47,8 +46,7 @@ export function Navbar() {
                 to={l.to}
                 end
                 className={({ isActive }) =>
-                  `text-sm font-medium hover:text-honey-deep transition-colors relative group ${
-                    isActive ? "text-honey-deep" : "text-charcoal/80"
+                  `text-sm font-medium hover:text-honey-deep transition-colors relative group ${isActive ? "text-honey-deep" : "text-charcoal/80"
                   }`
                 }
               >
