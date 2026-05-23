@@ -5,7 +5,6 @@ import { Layout, PageHeader } from "@/components/Layout";
 import butterflyPea from "@/assets/product-butterfly-pea.png";
 import lemon from "@/assets/product-lemon.png";
 import gingerTurmeric from "@/assets/product-ginger-turmeric.png";
-import productsHeroBg from "@/assets/products-hero-bg.png";
 import hanovaTumbler from "@/assets/hanova-tumbler.png";
 
 const products = [
@@ -41,7 +40,9 @@ export default function Products() {
   }, []);
   return (
     <Layout>
-      <PageHeader
+      {/* <div className="bg-transparent"> */}
+      <div className="bg-white">
+        <PageHeader
         eyebrow="Ancient Infusion"
         title={
           <>
@@ -50,7 +51,6 @@ export default function Products() {
           </>
         }
         subtitle="A curated collection of plant-forward honey concentrates — each crafted for a specific moment in your day."
-        bgImage={productsHeroBg}
       />
 
       <section className="py-20 sm:py-28">
@@ -105,7 +105,8 @@ export default function Products() {
         </div>
       </section>
 
-      <section className="py-20 bg-cream">
+      {/* <section className="py-20 bg-cream"> */}
+      <section className="py-20 bg-white">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 grid md:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -25 }}
@@ -141,6 +142,7 @@ export default function Products() {
           </motion.div>
         </div>
       </section>
+      </div>
     </Layout>
   );
 }

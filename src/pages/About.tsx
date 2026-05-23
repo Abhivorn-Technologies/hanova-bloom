@@ -4,16 +4,18 @@ import { Layout, PageHeader } from "@/components/Layout";
 import honey from "@/assets/honey-drip.jpg";
 import bee from "@/assets/bee-flower.jpg";
 import lemon from "@/assets/lemon-honey.jpg";
-import aboutHeroBg from "@/assets/about-hero-bg.png";
-import hanovaCard from "@/assets/hanova-card.jpg";
+import hanovaTube from "@/assets/product-tube-transparent.png";
 
-export default function About() {
+export default function 
+About() {
   useEffect(() => {
     document.title = "About — Hanova Life Sciences";
   }, []);
   return (
     <Layout>
-      <PageHeader
+      {/* <div className="bg-transparent"> */}
+      <div className="bg-white">
+        <PageHeader
         eyebrow="Introduction"
         title={
           <>
@@ -24,7 +26,6 @@ export default function About() {
         }
         subtitle="Hanova is a new generation functional honey sachet brand built around the modern reality — busy lifestyles demand instant, hygienic, single-serve wellness."
         className="pt-28 sm:pt-36 pb-12 sm:pb-14"
-        bgImage={aboutHeroBg}
       />
 
       <section className="py-20 sm:py-28">
@@ -65,9 +66,9 @@ export default function About() {
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="md:col-span-5 aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border border-honey/15 hover:scale-[1.01] transition-transform duration-500 bg-white"
+            className="md:col-span-5 flex items-center justify-center hover:scale-[1.02] transition-transform duration-500"
           >
-            <img src={hanovaCard} alt="Hanova Premium Product Cards" className="w-full h-full object-cover" loading="lazy" />
+            <img src={hanovaTube} alt="Hanova Premium Product" className="w-full h-auto max-h-[32rem] object-contain drop-shadow-2xl" loading="lazy" />
           </motion.div>
         </div>
       </section>
@@ -101,6 +102,7 @@ export default function About() {
           </div>
         </div>
       </section>
+      </div>
     </Layout>
   );
 }

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Sparkles, FlaskRound, ShieldCheck, BadgeCheck, Battery, Briefcase } from "lucide-react";
-import whyHanovaLifestyle from "@/assets/why-hanova-lifestyle.png";
+import whyHanovaLifestyle from "@/assets/lifestyle-ginger-turmeric.png";
 
 const points = [
   { icon: Sparkles, title: "Premium Ingredients", text: "Hand-selected botanicals and pure honey at the source." },

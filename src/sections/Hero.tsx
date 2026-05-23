@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import heroProduct from "@/assets/product-lemon.png";
 import heroProductAlt from "@/assets/product-ginger-turmeric.png";
 import heroProductThird from "@/assets/product-butterfly-pea.png";
-import heroBg from "@/assets/hero-bg.png";
 
 
 export function Hero() {
@@ -19,22 +18,10 @@ export function Hero() {
   const getSlot = (i: number) => (i + step) % 3;
 
   return (
-    <section id="top" className="relative min-h-screen pt-28 pb-20 overflow-hidden">
-      {/* Hero Background Image */}
-      <div className="absolute inset-0 -z-20">
-        <img
-          src={heroBg}
-          alt=""
-          aria-hidden
-          className="w-full h-full object-cover object-center"
-        />
-        {/* Gradient overlay: left side stays readable, right fades to transparent */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#fdf6e3]/92 via-[#fdf6e3]/70 to-[#fdf6e3]/20" />
-        {/* Bottom fade for smooth section transition */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#fdf6e3] to-transparent" />
-      </div>
+    <section id="top" className="relative min-h-screen pt-28 pb-20 overflow-hidden bg-white">
 
-      {/* Floating honey drops */}
+
+      {/* Floating honey drops - commented out per request to keep current color combination available 
       <motion.div
         aria-hidden
         className="absolute -top-10 -left-10 w-72 h-72 rounded-full bg-honey/20 blur-3xl animate-float-slow"
@@ -49,6 +36,7 @@ export function Hero() {
         className="absolute bottom-0 left-1/3 w-80 h-80 rounded-full bg-cream/50 blur-3xl animate-float-slow"
         style={{ animationDelay: "4s" }}
       />
+      */}
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 grid lg:grid-cols-12 gap-12 items-center">
         <div className="lg:col-span-7">
@@ -126,7 +114,7 @@ export function Hero() {
           </motion.div>
         </div>
 
-        <div className="lg:col-span-5 relative">
+        <div className="lg:col-span-5 relative z-20">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}

@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
-import logo from "@/assets/hanova-logo.png";
+import logo from "@/assets/hanova-logo-new.png";
 
 const links = [
   { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
+  { to: "/about", label: "About Us" },
   { to: "/products", label: "Products" },
-  { to: "/contact", label: "Contact" },
+  { to: "/blogs", label: "Blogs" },
+  { to: "/contact", label: "Contact Us" },
 ] as const;
 
 export function Navbar() {

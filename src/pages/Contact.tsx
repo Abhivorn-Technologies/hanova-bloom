@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { Layout, PageHeader } from "@/components/Layout";
 import { Contact as ContactSection } from "@/sections/Contact";
-import contactHeroBg from "@/assets/contact-hero-bg.png";
 
 export default function Contact() {
   useEffect(() => {
@@ -9,7 +8,9 @@ export default function Contact() {
   }, []);
   return (
     <Layout>
-      <PageHeader
+      {/* <div className="bg-transparent"> */}
+      <div className="bg-white">
+        <PageHeader
         eyebrow="Contact"
         title={
           <>
@@ -18,9 +19,9 @@ export default function Contact() {
           </>
         }
         subtitle="Partnerships, wholesale, retail enquiries, or just a hello — we'd love to hear from you."
-        bgImage={contactHeroBg}
       />
       <ContactSection />
+      </div>
     </Layout>
   );
 }

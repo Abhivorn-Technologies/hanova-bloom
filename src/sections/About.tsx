@@ -124,7 +124,7 @@ export function About() {
             Where <span className="text-gradient-honey italic">wellness</span> meets
             modern ritual.
           </h2>
-          <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+          <p className="mt-6 text-muted-foreground leading-relaxed">
             HANOVA LIFE SCIENCES is a premium wellness and nutraceutical brand focused on
             delivering natural, plant-based functional honey products that support modern
             lifestyles.
