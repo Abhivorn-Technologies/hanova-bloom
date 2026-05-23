@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Leaf, Sprout, Zap, FlaskConical, Ban, Sun, Package } from "lucide-react";
+import { Leaf, Sprout, Zap, FlaskConical, Ban, Package } from "lucide-react";
 
 const items = [
   { icon: Leaf, title: "100% Natural", text: "Sourced from nature, never synthetic." },
@@ -7,7 +7,6 @@ const items = [
   { icon: Zap, title: "Instant Wellness", text: "Effortless rituals for daily energy." },
   { icon: FlaskConical, title: "Functional Nutrition", text: "Science-led blends with measurable outcomes." },
   { icon: Ban, title: "No Added Sugar", text: "Pure sweetness from honey and botanicals." },
-  { icon: Sun, title: "Daily Energy", text: "Sustained focus for modern lifestyles." },
   { icon: Package, title: "Sachet Convenience", text: "Portable, hygienic, ready when you are." },
 ];
 

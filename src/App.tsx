@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import Index from "@/pages/Index";
 import About from "@/pages/About";
 import Products from "@/pages/Products";
+import Blogs from "@/pages/Blogs";
 import Contact from "@/pages/Contact";
 import Privacy from "@/pages/Privacy";
 import Terms from "@/pages/Terms";
@@ -38,6 +39,7 @@ export default function App() {
         <Route path="/" element={<Index />} />
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/blogs" element={<Blogs />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />

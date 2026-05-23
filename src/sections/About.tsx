@@ -1,5 +1,12 @@
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import aboutHoney from "@/assets/about-honey.png";
+import productGingerTurmeric from "@/assets/product-ginger-turmeric.png";
+import productButterflyPea from "@/assets/product-butterfly-pea.png";
+import productLemon from "@/assets/product-lemon.png";
+
+const floatingProducts = [productGingerTurmeric, productButterflyPea, productLemon];
+const floatingAlts = ["Ginger Turmeric", "Butterfly Pea", "Lemon Honey"];
 
 function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -25,6 +32,15 @@ function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
 }
 
 export function About() {
+  const [productIndex, setProductIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setProductIndex((prev) => (prev + 1) % floatingProducts.length);
+    }, 2500);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section id="about" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 grid lg:grid-cols-2 gap-16 items-center">
@@ -35,22 +51,63 @@ export function About() {
           transition={{ duration: 0.8 }}
           className="relative"
         >
-          <div className="aspect-[4/5] rounded-[3rem] overflow-hidden relative bg-gradient-to-br from-cream via-sand to-honey/60">
-            <div className="absolute inset-0 grid place-items-center">
-              <div className="w-3/4 aspect-square rounded-full bg-honey-gradient opacity-90 blur-2xl" />
-            </div>
-            <div className="absolute inset-0 grid place-items-center">
-              <div className="text-center">
-                <div className="font-display text-7xl md:text-8xl text-charcoal/90">H</div>
-                <div className="mt-2 text-xs tracking-[0.4em] uppercase text-charcoal/70">
-                  Hanova
-                </div>
+          {/* Full-width Honey Image */}
+          <div className="relative overflow-hidden rounded-[2.5rem] shadow-lg border border-white/40">
+            <img
+              src={aboutHoney}
+              alt="Hanova Premium Honey"
+              className="w-full h-[380px] sm:h-[460px] object-cover hover:scale-[1.02] transition-transform duration-700"
+            />
+
+            {/* Sachet overlay — inside image, left side */}
+            <div className="absolute top-6 left-6 flex flex-col items-center z-10">
+
+              {/* Pure Honey badge */}
+              <div className="px-3 py-1.5 rounded-full bg-white/80 backdrop-blur-sm border border-amber-200 shadow-sm">
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-amber-700">
+                  Pure Honey
+                </span>
               </div>
+
+              {/* Drip stem */}
+              <div className="w-px h-7 bg-gradient-to-b from-amber-400 to-amber-500/70" />
+
+              {/* Animated honey drop */}
+              <motion.div
+                className="w-2 rounded-full bg-amber-400"
+                animate={{ height: ["4px", "12px", "4px"], opacity: [0, 1, 0], y: [0, 0, 12] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeIn", repeatDelay: 1 }}
+              />
+
+              {/* Floating sachet */}
+              <motion.div
+                animate={{ y: [0, -7, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                className="relative mt-1 w-32 sm:w-40"
+              >
+                <div className="absolute -bottom-1 inset-x-3 h-3 bg-amber-400/20 blur-md rounded-full" />
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={productIndex}
+                    src={floatingProducts[productIndex]}
+                    alt={floatingAlts[productIndex]}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.9, ease: "easeInOut" }}
+                    className="w-full object-contain drop-shadow-2xl"
+                  />
+                </AnimatePresence>
+              </motion.div>
+
+
             </div>
-          </div>
-          <div className="absolute -bottom-8 -right-6 glass rounded-3xl p-6 shadow-xl max-w-[200px]">
-            <div className="text-xs uppercase tracking-widest text-muted-foreground">Crafted in</div>
-            <div className="font-display text-xl text-charcoal mt-1">Hyderabad, India</div>
+
+            {/* Hyderabad badge — inside image, bottom right */}
+            <div className="absolute bottom-5 right-5 bg-white/80 backdrop-blur-sm rounded-2xl px-5 py-3 shadow-md z-10">
+              <div className="text-[10px] uppercase tracking-widest text-stone-400">Crafted in</div>
+              <div className="font-display text-base text-charcoal mt-0.5">Hyderabad, India</div>
+            </div>
           </div>
         </motion.div>
 
@@ -67,7 +124,7 @@ export function About() {
             Where <span className="text-gradient-honey italic">wellness</span> meets
             modern ritual.
           </h2>
-          <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+          <p className="mt-6 text-muted-foreground leading-relaxed">
             HANOVA LIFE SCIENCES is a premium wellness and nutraceutical brand focused on
             delivering natural, plant-based functional honey products that support modern
             lifestyles.

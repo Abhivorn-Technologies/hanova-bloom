@@ -1,6 +1,6 @@
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import logo from "@/assets/hanova-logo.png";
+import logo from "@/assets/hanova-logo-new.png";
 import honey from "@/assets/honey-drip.jpg";
 import lemon from "@/assets/lemon-honey.jpg";
 import bee from "@/assets/bee-flower.jpg";
@@ -19,9 +19,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
-            <div className="bg-cream rounded-2xl p-4 inline-block">
-              <img src={logo} alt="Hanova" className="h-10 w-auto" />
-            </div>
+            <img src={logo} alt="Hanova" className="h-10 w-auto" />
             <p className="mt-5 text-sm text-cream/70 max-w-sm">
               Nature, simplified for everyday life. Plant-based functional honey sachets
               crafted for instant wellness — convenience × hygiene × pure outcomes.
@@ -44,9 +42,10 @@ export function Footer() {
             <ul className="mt-4 space-y-2 text-sm">
               {[
                 ["Home", "/"],
-                ["About", "/about"],
+                ["About Us", "/about"],
                 ["Products", "/products"],
-                ["Contact", "/contact"],
+                ["Blogs", "/blogs"],
+                ["Contact Us", "/contact"],
               ].map(([l, h]) => (
                 <li key={l}>
                   <Link to={h} className="text-cream/80 hover:text-honey transition-colors">

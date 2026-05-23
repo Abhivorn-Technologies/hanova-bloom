@@ -4,17 +4,28 @@ import { Layout, PageHeader } from "@/components/Layout";
 import honey from "@/assets/honey-drip.jpg";
 import bee from "@/assets/bee-flower.jpg";
 import lemon from "@/assets/lemon-honey.jpg";
+import hanovaTube from "@/assets/product-tube-transparent.png";
 
-export default function About() {
+export default function 
+About() {
   useEffect(() => {
     document.title = "About — Hanova Life Sciences";
   }, []);
   return (
     <Layout>
-      <PageHeader
+      {/* <div className="bg-transparent"> */}
+      <div className="bg-white">
+        <PageHeader
         eyebrow="Introduction"
-        title="Wellness must be portable, instant, and reliable."
-        subtitle="Hanova is a new generation functional honey brand built around the modern reality — busy lifestyles demand instant, hygienic, single-serve wellness."
+        title={
+          <>
+            Wellness must be{" "}
+            <span className="text-gradient-honey italic font-serif">portable, instant,</span> and{" "}
+            <span className="text-gradient-honey italic font-serif">reliable.</span>
+          </>
+        }
+        subtitle="Hanova is a new generation functional honey sachet brand built around the modern reality — busy lifestyles demand instant, hygienic, single-serve wellness."
+        className="pt-28 sm:pt-36 pb-12 sm:pb-14"
       />
 
       <section className="py-20 sm:py-28">
@@ -33,20 +44,31 @@ export default function About() {
           ))}
         </div>
 
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 mt-20 grid md:grid-cols-2 gap-12">
-          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl sm:text-4xl text-charcoal">Our Vision</h2>
-            <p className="mt-4 text-muted-foreground">
-              To become the most trusted functional honey sachet brand — bridging mass accessibility and premium
-              wellness. People don't reject honey. They reject effort, mess, and inconsistency.
-            </p>
-          </motion.div>
-          <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl sm:text-4xl text-charcoal">Our Mission</h2>
-            <p className="mt-4 text-muted-foreground">
-              Honey concentrated with functional ingredients — engineered for instant energy, weight-management
-              support, immunity, and everyday rituals that fit into modern life.
-            </p>
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 mt-20 grid md:grid-cols-12 gap-12 items-center">
+          <div className="md:col-span-7 space-y-12">
+            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+              <h2 className="text-3xl sm:text-4xl text-charcoal">Our Vision</h2>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                To become the most trusted functional honey sachet brand — bridging mass accessibility and premium
+                wellness. People don't reject honey. They reject effort, mess, and inconsistency.
+              </p>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }}>
+              <h2 className="text-3xl sm:text-4xl text-charcoal">Our Mission</h2>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                Honey concentrated with functional ingredients — engineered for instant energy, weight-management
+                support, immunity, and everyday rituals that fit into modern life.
+              </p>
+            </motion.div>
+          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="md:col-span-5 flex items-center justify-center hover:scale-[1.02] transition-transform duration-500"
+          >
+            <img src={hanovaTube} alt="Hanova Premium Product" className="w-full h-auto max-h-[32rem] object-contain drop-shadow-2xl" loading="lazy" />
           </motion.div>
         </div>
       </section>
@@ -69,8 +91,9 @@ export default function About() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="rounded-2xl bg-white p-6 shadow-sm border border-charcoal/5"
+                transition={{ delay: i * 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -6, scale: 1.02 }}
+                className="rounded-2xl bg-white p-6 shadow-sm border border-charcoal/5 hover:border-honey/40 hover:shadow-[0_15px_30px_rgba(224,163,0,0.12)] transition-all duration-300 cursor-pointer"
               >
                 <div className="text-honey-deep font-semibold text-sm">{c.t}</div>
                 <p className="mt-3 text-sm text-muted-foreground">{c.d}</p>
@@ -79,6 +102,7 @@ export default function About() {
           </div>
         </div>
       </section>
+      </div>
     </Layout>
   );
 }
