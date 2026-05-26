@@ -1,0 +1,21 @@
+# Robots.txt for Hanova Life Sciences
+# Allow search engines to crawl and index your site
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+# Specific directives for Google
+User-agent: Googlebot
+Allow: /
+
+# Specific directives for Bing
+User-agent: Bingbot
+Allow: /
+
+# Crawl delay (in seconds) - adjust if needed
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://hanovalifesciences.com/sitemap.xml
