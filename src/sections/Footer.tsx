@@ -4,13 +4,13 @@ import logo from "@/assets/hanova-logo-new.png";
 import honey from "@/assets/honey-drip.jpg";
 import lemon from "@/assets/lemon-honey.jpg";
 import bee from "@/assets/bee-flower.jpg";
-import sachet from "@/assets/sachet-hand.jpg";
+import productTube from "@/assets/product-tube-full.png";
 
 const gallery = [
   { src: honey, alt: "Honey drip" },
   { src: lemon, alt: "Lemon honey" },
   { src: bee, alt: "Bee pollination" },
-  { src: sachet, alt: "Hanova sachet" },
+  { src: productTube, alt: "Product tube" },
 ];
 
 export function Footer() {
