@@ -109,7 +109,7 @@ export function Contact() {
 
             <div className="space-y-4">
               <a
-                href="mailto:hanovalifesciences@gmail.com"
+                href="mailto:support@hanovalifesciences.com"
                 className="flex items-center gap-5 p-4 rounded-2xl glass hover:border-honey/60 hover:shadow-md hover:scale-[1.01] transition-all duration-300 group"
               >
                 <div className="grid place-items-center w-12 h-12 rounded-xl bg-honey-gradient text-charcoal shadow-sm">
@@ -120,7 +120,7 @@ export function Contact() {
                     Email
                   </div>
                   <div className="text-charcoal font-medium group-hover:text-honey-deep transition-colors">
-                    hanovalifesciences@gmail.com
+                    support@hanovalifesciences.com
                   </div>
                 </div>
               </a>

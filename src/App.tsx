@@ -8,6 +8,8 @@ import Contact from "@/pages/Contact";
 import Privacy from "@/pages/Privacy";
 import Terms from "@/pages/Terms";
 import Security from "@/pages/Security";
+import WhyHanovaPage from "@/pages/WhyHanova";
+import GenerateQR from "@/pages/GenerateQR";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -47,6 +49,8 @@ export default function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/security" element={<Security />} />
+        <Route path="/why-hanova" element={<WhyHanovaPage />} />
+        <Route path="/generate-qr" element={<GenerateQR />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
