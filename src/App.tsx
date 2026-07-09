@@ -8,6 +8,8 @@ import Contact from "@/pages/Contact";
 import Privacy from "@/pages/Privacy";
 import Terms from "@/pages/Terms";
 import Security from "@/pages/Security";
+import WhyHanovaPage from "@/pages/WhyHanova";
+import GenerateQR from "@/pages/GenerateQR";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -23,7 +25,10 @@ function NotFound() {
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-foreground">404</h1>
         <h2 className="mt-4 text-xl font-semibold">Page not found</h2>
-        <Link to="/" className="mt-6 inline-flex rounded-md bg-primary px-4 py-2 text-primary-foreground">
+        <Link
+          to="/"
+          className="mt-6 inline-flex rounded-md bg-primary px-4 py-2 text-primary-foreground"
+        >
           Go home
         </Link>
       </div>
@@ -44,6 +49,8 @@ export default function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/security" element={<Security />} />
+        <Route path="/why-hanova" element={<WhyHanovaPage />} />
+        <Route path="/generate-qr" element={<GenerateQR />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

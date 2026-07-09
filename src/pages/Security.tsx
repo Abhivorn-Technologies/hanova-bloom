@@ -3,10 +3,26 @@ import { Layout, PageHeader } from "@/components/Layout";
 import { Shield, Lock, Server, Mail } from "lucide-react";
 
 const pillars = [
-  { icon: Shield, h: "Data Protection", p: "All personal data is encrypted in transit (TLS 1.2+) and at rest. Access is strictly role-based and audited." },
-  { icon: Lock, h: "Secure Payments", p: "Payments are processed through PCI-DSS compliant gateways. We never store full card numbers on our servers." },
-  { icon: Server, h: "Platform Security", p: "Regular vulnerability scans, automated patching, and least-privilege access controls keep our infrastructure hardened." },
-  { icon: Mail, h: "Responsible Disclosure", p: "Found a vulnerability? Email security@hanovalifesciences.com. We respond within 72 hours and credit responsible reporters." },
+  {
+    icon: Shield,
+    h: "Data Protection",
+    p: "All personal data is encrypted in transit (TLS 1.2+) and at rest. Access is strictly role-based and audited.",
+  },
+  {
+    icon: Lock,
+    h: "Secure Payments",
+    p: "Payments are processed through PCI-DSS compliant gateways. We never store full card numbers on our servers.",
+  },
+  {
+    icon: Server,
+    h: "Platform Security",
+    p: "Regular vulnerability scans, automated patching, and least-privilege access controls keep our infrastructure hardened.",
+  },
+  {
+    icon: Mail,
+    h: "Responsible Disclosure",
+    p: "Found a vulnerability? Email security@hanovalifesciences.com. We respond within 72 hours and credit responsible reporters.",
+  },
 ];
 
 export default function Security() {
@@ -40,15 +56,16 @@ export default function Security() {
           <div>
             <h3 className="text-xl text-charcoal font-display">Product Integrity</h3>
             <p className="mt-3 text-muted-foreground">
-              Every Hanova batch is produced under FSSAI-licensed facilities with strict hygiene protocols.
-              Single-serve sachets eliminate cross-contamination risks common to multi-use jars.
+              Every Hanova batch is produced under FSSAI-licensed facilities with strict hygiene
+              protocols. Single-serve sachets eliminate cross-contamination risks common to
+              multi-use jars.
             </p>
           </div>
           <div>
             <h3 className="text-xl text-charcoal font-display">Traceability</h3>
             <p className="mt-3 text-muted-foreground">
-              Each sachet carries a batch code so we can trace ingredients back to the source — protecting both
-              quality and accountability.
+              Each sachet carries a batch code so we can trace ingredients back to the source —
+              protecting both quality and accountability.
             </p>
           </div>
         </div>

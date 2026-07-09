@@ -32,8 +32,9 @@ export function Navbar() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div
-          className={`flex items-center justify-between rounded-full px-4 sm:px-6 py-3 transition-all duration-500 ${scrolled ? "glass shadow-lg" : "bg-white/40 backdrop-blur"
-            }`}
+          className={`flex items-center justify-between rounded-full px-4 sm:px-6 py-3 transition-all duration-500 ${
+            scrolled ? "glass shadow-lg" : "bg-white/40 backdrop-blur"
+          }`}
         >
           <Link to="/" className="flex items-center gap-2">
             <img src={logo} alt="Hanova" className="h-6 sm:h-8 w-auto" />
@@ -46,7 +47,8 @@ export function Navbar() {
                 to={l.to}
                 end
                 className={({ isActive }) =>
-                  `text-sm font-medium hover:text-honey-deep transition-colors relative group ${isActive ? "text-honey-deep" : "text-charcoal/80"
+                  `text-sm font-medium hover:text-honey-deep transition-colors relative group ${
+                    isActive ? "text-honey-deep" : "text-charcoal/80"
                   }`
                 }
               >
@@ -57,7 +59,7 @@ export function Navbar() {
           </nav>
 
           <a
-            href="https://api.whatsapp.com/send?phone=919182609080&text=Hi%20Hanova%21%20%F0%9F%91%8B%0A%0AI%20came%20across%20your%20website%20and%20I%27m%20really%20interested%20in%20your%20premium%20honey%20wellness%20products.%20%F0%9F%8D%AF%0A%0ACould%20you%20please%20share%20more%20details%20about%20the%20available%20products%2C%20pricing%2C%20and%20how%20I%20can%20place%20an%20order%3F%0A%0ALooking%20forward%20to%20hearing%20from%20you%21"
+            href="https://wa.me/919494630088?text=Hi%20Hanova%21%20%F0%9F%91%8B%0A%0AI%20came%20across%20your%20website%20and%20I%27m%20really%20interested%20in%20your%20premium%20honey%20wellness%20products.%20%F0%9F%8D%AF%0A%0ACould%20you%20please%20share%20more%20details%20about%20the%20available%20products%2C%20pricing%2C%20and%20how%20I%20can%20place%20an%20order%3F%0A%0ALooking%20forward%20to%20hearing%20from%20you%21"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden md:inline-flex items-center gap-2 justify-center rounded-full bg-charcoal text-cream px-5 py-2.5 text-sm font-medium hover:bg-honey hover:text-charcoal transition-colors"
@@ -94,7 +96,7 @@ export function Navbar() {
                   </Link>
                 ))}
                 <a
-                  href="https://api.whatsapp.com/send?phone=919182609080&text=Hi%20Hanova%21%20%F0%9F%91%8B%0A%0AI%20came%20across%20your%20website%20and%20I%27m%20really%20interested%20in%20your%20premium%20honey%20wellness%20products.%20%F0%9F%8D%AF%0A%0ACould%20you%20please%20share%20more%20details%20about%20the%20available%20products%2C%20pricing%2C%20and%20how%20I%20can%20place%20an%20order%3F%0A%0ALooking%20forward%20to%20hearing%20from%20you%21"
+                  href="https://wa.me/919494630088?text=Hi%20Hanova%21%20%F0%9F%91%8B%0A%0AI%20came%20across%20your%20website%20and%20I%27m%20really%20interested%20in%20your%20premium%20honey%20wellness%20products.%20%F0%9F%8D%AF%0A%0ACould%20you%20please%20share%20more%20details%20about%20the%20available%20products%2C%20pricing%2C%20and%20how%20I%20can%20place%20an%20order%3F%0A%0ALooking%20forward%20to%20hearing%20from%20you%21"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setOpen(false)}

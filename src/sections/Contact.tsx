@@ -33,8 +33,8 @@ export function Contact() {
 *Message:* ${formValues.message}`;
 
       const encodedText = encodeURIComponent(whatsappText);
-      const targetPhone = "919182609080"; 
-      const whatsappUrl = `https://api.whatsapp.com/send?phone=${targetPhone}&text=${encodedText}`;
+      const targetPhone = "919494630088";
+      const whatsappUrl = `https://wa.me/${targetPhone}?text=${encodedText}`;
 
       window.open(whatsappUrl, "_blank", "noopener,noreferrer");
 
@@ -65,14 +65,23 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-24 sm:py-32 bg-cream/40 text-charcoal overflow-hidden">
+    <section
+      id="contact"
+      className="relative py-24 sm:py-32 bg-cream/40 text-charcoal overflow-hidden"
+    >
       {/* Ambient background glows */}
       <div className="absolute top-1/4 -right-40 w-[35rem] h-[35rem] rounded-full bg-honey/10 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 -left-40 w-[35rem] h-[35rem] rounded-full bg-sand/15 blur-[120px] pointer-events-none" />
 
       {/* Subtle Vector Honeycomb Background Graphic */}
       <div className="absolute right-0 bottom-0 w-80 h-80 opacity-[0.06] pointer-events-none text-honey-deep">
-        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="0.6" className="w-full h-full">
+        <svg
+          viewBox="0 0 100 100"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="0.6"
+          className="w-full h-full"
+        >
           <pattern id="honeycomb" width="16" height="27.71" patternUnits="userSpaceOnUse">
             <path d="M8 0 L16 4.62 L16 13.86 L8 18.48 L0 13.86 L0 4.62 Z" />
             <path d="M0 27.71 L8 23.09 L16 27.71" />
@@ -84,7 +93,6 @@ export function Contact() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          
           {/* Left Column: Contact details */}
           <div className="space-y-8">
             <div>
@@ -92,8 +100,7 @@ export function Contact() {
                 Get in touch
               </p>
               <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl text-charcoal font-display">
-                Let’s start a{" "}
-                <span className="text-gradient-honey italic">conversation</span>.
+                Let’s start a <span className="text-gradient-honey italic">conversation</span>.
               </h2>
               <p className="mt-6 text-muted-foreground text-base sm:text-lg max-w-md">
                 For partnerships, wholesale, or wellness inquiries — we’d love to hear from you.
@@ -101,24 +108,34 @@ export function Contact() {
             </div>
 
             <div className="space-y-4">
-              <a href="mailto:hanovalifesciences@gmail.com" className="flex items-center gap-5 p-4 rounded-2xl glass hover:border-honey/60 hover:shadow-md hover:scale-[1.01] transition-all duration-300 group">
+              <a
+                href="mailto:support@hanovalifesciences.com"
+                className="flex items-center gap-5 p-4 rounded-2xl glass hover:border-honey/60 hover:shadow-md hover:scale-[1.01] transition-all duration-300 group"
+              >
                 <div className="grid place-items-center w-12 h-12 rounded-xl bg-honey-gradient text-charcoal shadow-sm">
                   <Mail size={18} />
                 </div>
                 <div>
-                  <div className="text-[10px] uppercase tracking-widest text-muted-foreground font-semibold">Email</div>
+                  <div className="text-[10px] uppercase tracking-widest text-muted-foreground font-semibold">
+                    Email
+                  </div>
                   <div className="text-charcoal font-medium group-hover:text-honey-deep transition-colors">
-                    hanovalifesciences@gmail.com
+                    support@hanovalifesciences.com
                   </div>
                 </div>
               </a>
 
-              <a href="tel:+919494630088" className="flex items-center gap-5 p-4 rounded-2xl glass hover:border-honey/60 hover:shadow-md hover:scale-[1.01] transition-all duration-300 group">
+              <a
+                href="tel:+919494630088"
+                className="flex items-center gap-5 p-4 rounded-2xl glass hover:border-honey/60 hover:shadow-md hover:scale-[1.01] transition-all duration-300 group"
+              >
                 <div className="grid place-items-center w-12 h-12 rounded-xl bg-honey-gradient text-charcoal shadow-sm">
                   <Phone size={18} />
                 </div>
                 <div>
-                  <div className="text-[10px] uppercase tracking-widest text-muted-foreground font-semibold">Phone</div>
+                  <div className="text-[10px] uppercase tracking-widest text-muted-foreground font-semibold">
+                    Phone
+                  </div>
                   <div className="text-charcoal font-medium group-hover:text-honey-deep transition-colors">
                     +91 9494630088
                   </div>
@@ -130,11 +147,16 @@ export function Contact() {
                   <MapPin size={18} />
                 </div>
                 <div>
-                  <div className="text-[10px] uppercase tracking-widest text-muted-foreground font-semibold">Address</div>
+                  <div className="text-[10px] uppercase tracking-widest text-muted-foreground font-semibold">
+                    Address
+                  </div>
                   <div className="text-charcoal/80 text-sm leading-relaxed mt-0.5">
-                    1-36, Laxma Reddy Nagar Colony,<br />
-                    Uppal Circle under GHMC, Uppal Mandal,<br />
-                    Medchal Malkajgiri District,<br />
+                    1-36, Laxma Reddy Nagar Colony,
+                    <br />
+                    Uppal Circle under GHMC, Uppal Mandal,
+                    <br />
+                    Medchal Malkajgiri District,
+                    <br />
                     Hyderabad – 500039
                   </div>
                 </div>
@@ -156,17 +178,24 @@ export function Contact() {
 
           {/* Right Column: Contact form with 3D organic floating honey elements */}
           <div className="relative self-start">
-            
             {/* Floating Organic Honey droplet 1 */}
             <motion.div
               animate={{ y: [0, -18, 0], x: [0, 8, 0], scale: [1, 1.05, 1] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               className="absolute -top-12 -left-12 w-24 h-24 bg-gradient-to-br from-honey/50 to-honey-deep/60 rounded-full blur-[3px] opacity-40 pointer-events-none -z-10 shadow-lg shadow-honey/20"
             />
-            
+
             {/* Floating Organic Honey droplet 2 */}
             <motion.div
-              animate={{ y: [0, 15, 0], x: [0, -10, 0], borderRadius: ["40% 60% 70% 30% / 50% 50% 60% 40%", "60% 40% 30% 70% / 40% 60% 50% 50%", "40% 60% 70% 30% / 50% 50% 60% 40%"] }}
+              animate={{
+                y: [0, 15, 0],
+                x: [0, -10, 0],
+                borderRadius: [
+                  "40% 60% 70% 30% / 50% 50% 60% 40%",
+                  "60% 40% 30% 70% / 40% 60% 50% 50%",
+                  "40% 60% 70% 30% / 50% 50% 60% 40%",
+                ],
+              }}
               transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
               className="absolute -bottom-10 -right-8 w-28 h-28 bg-gradient-to-br from-honey-deep/50 to-honey/40 blur-[3px] opacity-35 pointer-events-none -z-10 shadow-lg shadow-honey-deep/10"
             />
@@ -218,7 +247,7 @@ export function Contact() {
                   Your Full Name
                 </label>
               </motion.div>
-              
+
               <div className="grid sm:grid-cols-2 gap-6">
                 {/* Email Input with floating label animation */}
                 <motion.div variants={itemVariants} className="relative">
@@ -310,21 +339,27 @@ export function Contact() {
                   {status === "sending" ? (
                     <Loader2 className="animate-spin" size={18} />
                   ) : (
-                    <Send className="group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform" size={16} />
+                    <Send
+                      className="group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform"
+                      size={16}
+                    />
                   )}
                   {status === "sending" ? "Sending…" : "Send message"}
                 </button>
               </motion.div>
 
               {status === "ok" && (
-                <p className="text-sm text-honey-deep font-semibold">Thanks — redirecting you to WhatsApp shortly.</p>
+                <p className="text-sm text-honey-deep font-semibold">
+                  Thanks — redirecting you to WhatsApp shortly.
+                </p>
               )}
               {status === "err" && (
-                <p className="text-sm text-red-500 font-semibold">Something went wrong. Please try again.</p>
+                <p className="text-sm text-red-500 font-semibold">
+                  Something went wrong. Please try again.
+                </p>
               )}
             </motion.form>
           </div>
-
         </div>
       </div>
     </section>

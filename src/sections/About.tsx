@@ -61,7 +61,6 @@ export function About() {
 
             {/* Sachet overlay — inside image, left side */}
             <div className="absolute top-6 left-6 flex flex-col items-center z-10">
-
               {/* Pure Honey badge */}
               <div className="px-3 py-1.5 rounded-full bg-white/80 backdrop-blur-sm border border-amber-200 shadow-sm">
                 <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-amber-700">
@@ -99,8 +98,6 @@ export function About() {
                   />
                 </AnimatePresence>
               </motion.div>
-
-
             </div>
 
             {/* Hyderabad badge — inside image, bottom right */}
@@ -121,17 +118,15 @@ export function About() {
             About Hanova
           </p>
           <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl text-charcoal">
-            Where <span className="text-gradient-honey italic">wellness</span> meets
-            modern ritual.
+            Where <span className="text-gradient-honey italic">wellness</span> meets modern ritual.
           </h2>
           <p className="mt-6 text-muted-foreground leading-relaxed">
-            HANOVA LIFE SCIENCES is a premium wellness and nutraceutical brand focused on
-            delivering natural, plant-based functional honey products that support modern
-            lifestyles.
+            HANOVA LIFE SCIENCES is a premium wellness and nutraceutical brand focused on delivering
+            natural, plant-based functional honey products that support modern lifestyles.
           </p>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Our mission is to bridge wellness, convenience, and science through innovative
-            products designed for everyday health rituals.
+            Our mission is to bridge wellness, convenience, and science through innovative products
+            designed for everyday health rituals.
           </p>
 
           <div className="mt-10 grid grid-cols-3 gap-6">
@@ -140,7 +135,10 @@ export function About() {
               { k: 12, s: "+", l: "Botanicals" },
               { k: 5, s: "★", l: "Quality" },
             ].map((i) => (
-              <div key={i.l} className="rounded-2xl bg-white/60 backdrop-blur border border-white/80 p-5">
+              <div
+                key={i.l}
+                className="rounded-2xl bg-white/60 backdrop-blur border border-white/80 p-5"
+              >
                 <div className="font-display text-4xl text-honey-deep">
                   <Counter to={i.k} suffix={i.s} />
                 </div>

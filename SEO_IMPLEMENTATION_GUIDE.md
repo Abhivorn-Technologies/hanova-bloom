@@ -3,6 +3,7 @@
 ## ✅ What Has Been Done
 
 ### 1. **Enhanced Meta Tags** (in `index.html`)
+
 - ✅ Added comprehensive meta tags for SEO
 - ✅ Added Open Graph tags for social media sharing
 - ✅ Added Twitter Card tags for Twitter sharing
@@ -12,15 +13,18 @@
 - ✅ Added author and language tags
 
 ### 2. **Structured Data (Schema Markup)**
+
 - ✅ Added Organization schema (JSON-LD) with company info, social links, contact
 - ✅ Added WebSite schema for search functionality
 
 ### 3. **Sitemap**
+
 - ✅ Created `public/sitemap.xml` with all 8 pages
 - ✅ Included lastmod and priority values for each page
 - ✅ Linked sitemap in HTML head tag
 
 ### 4. **Robots.txt**
+
 - ✅ Created `public/robots.txt` to guide search engine crawlers
 - ✅ Added sitemap URL reference
 - ✅ Set appropriate crawl delay
@@ -30,6 +34,7 @@
 ## 🔧 What You MUST Do Next
 
 ### 1. **Update Domain URL** (CRITICAL!)
+
 In the following files, replace `https://hanovalifesciences.com` with your actual domain:
 
 - `index.html` - Update all URLs in meta tags
@@ -68,14 +73,17 @@ In the following files, replace `https://hanovalifesciences.com` with your actua
 2. Get your Measurement ID
 3. Add to your React app using: `npm install @react-google-analytics` or similar
 4. Add Google Analytics script before closing `</head>` tag:
+
 ```html
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'GA_MEASUREMENT_ID');
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "GA_MEASUREMENT_ID");
 </script>
 ```
 
@@ -88,11 +96,14 @@ In the following files, replace `https://hanovalifesciences.com` with your actua
 ### 5. **Update Social Media References**
 
 In `index.html`, find these lines and update with your actual social handles:
+
 ```html
-"sameAs": [
-  "https://www.facebook.com/hanovalife",        <!-- Update handle -->
-  "https://www.instagram.com/hanovalife",       <!-- Update handle -->
-  "https://twitter.com/hanovalife"              <!-- Update handle -->
+"sameAs": [ "https://www.facebook.com/hanovalife",
+<!-- Update handle -->
+"https://www.instagram.com/hanovalife",
+<!-- Update handle -->
+"https://twitter.com/hanovalife"
+<!-- Update handle -->
 ]
 ```
 
@@ -112,6 +123,7 @@ In `index.html`, find these lines and update with your actual social handles:
   - Cumulative Layout Shift (CLS): < 0.1
 
 Use your Vite build to ensure optimal performance:
+
 ```bash
 npm run build
 npm run preview
@@ -122,41 +134,52 @@ npm run preview
 ## 📋 Additional SEO Best Practices
 
 ### Page-Specific Meta Tags (Per Page Optimization)
+
 For even better SEO, add unique meta descriptions and titles to each page:
 
 Example for Products page:
+
 ```javascript
 // In Products.tsx or use a meta tag library
 <Helmet>
   <title>Premium Wellness Products - Hanova Life Sciences</title>
-  <meta name="description" content="Explore our range of functional honey sachets and wellness products..." />
+  <meta
+    name="description"
+    content="Explore our range of functional honey sachets and wellness products..."
+  />
 </Helmet>
 ```
 
 Install and use Helmet:
+
 ```bash
 npm install react-helmet-async
 ```
 
 ### Mobile-Friendly Testing
+
 - Test at: https://search.google.com/test/mobile-friendly
 - Your site should be fully responsive
 
 ### Rich Snippets
+
 - Consider adding more schema markup for:
   - Product schema (for products page)
   - Article schema (for blogs page)
   - FAQSchema (if you have FAQs)
 
 ### Internal Linking
+
 - Ensure all pages link to each other appropriately
 - Use descriptive anchor text (avoid "click here")
 
 ### URL Structure
+
 - Your URL structure is already good: `/about`, `/products`, etc.
 - Keep URLs short, descriptive, and keyword-rich
 
 ### Content Optimization
+
 - Include target keywords naturally in:
   - Page titles
   - Meta descriptions
@@ -165,6 +188,7 @@ npm install react-helmet-async
   - Image alt text
 
 ### Page Speed
+
 - Optimize images (use WebP format)
 - Enable GZIP compression
 - Minimize CSS/JS
@@ -193,17 +217,20 @@ Before deploying to production:
 ## 📊 Monitoring Your SEO Progress
 
 ### Google Search Console
+
 - Monitor clicks and impressions
 - Track keyword rankings
 - Check for crawl errors
 - View coverage reports
 
 ### Google Analytics
+
 - Track user behavior
 - Monitor traffic sources
 - Track conversions
 
 ### Third-party Tools (Optional)
+
 - Ahrefs
 - SEMrush
 - Moz
@@ -224,15 +251,19 @@ Before deploying to production:
 ## ❓ Common Issues & Solutions
 
 ### Q: How long until my site appears in Google?
+
 **A:** Usually 2-4 weeks after initial crawl, but indexed pages may appear within days.
 
 ### Q: Do I need to do anything with `robots.txt` and `sitemap.xml`?
+
 **A:** They're now in your `public/` folder and will be served from your domain root. Just ensure your domain URL is correct.
 
 ### Q: Should I add internal linking?
+
 **A:** Yes! Link between related pages using descriptive anchor text. This helps Google understand your site structure.
 
 ### Q: How often should I update my sitemap?
+
 **A:** Update it whenever you add/remove pages. The `public/sitemap.xml` file is static, so update it manually as needed.
 
 ---

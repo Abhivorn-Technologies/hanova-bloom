@@ -21,8 +21,8 @@ export function Footer() {
           <div className="md:col-span-4">
             <img src={logo} alt="Hanova" className="h-10 w-auto" />
             <p className="mt-5 text-sm text-cream/70 max-w-sm">
-              Nature, simplified for everyday life. Plant-based functional honey sachets
-              crafted for instant wellness — convenience × hygiene × pure outcomes.
+              Nature, simplified for everyday life. Plant-based functional honey sachets crafted for
+              instant wellness — convenience × hygiene × pure outcomes.
             </p>
             <div className="mt-6 flex gap-3">
               {[FaInstagram, FaFacebookF, FaLinkedinIn, FaXTwitter].map((Icon, i) => (
@@ -77,8 +77,8 @@ export function Footer() {
             <div className="text-xs uppercase tracking-widest text-honey">Contact</div>
             <ul className="mt-4 space-y-2 text-sm text-cream/80">
               <li>
-                <a href="mailto:hanovalifesciences@gmail.com" className="hover:text-honey">
-                  hanovalifesciences@gmail.com
+                <a href="mailto:support@hanovalifesciences.com" className="hover:text-honey">
+                  support@hanovalifesciences.com
                 </a>
               </li>
               <li>

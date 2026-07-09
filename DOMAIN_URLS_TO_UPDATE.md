@@ -5,6 +5,7 @@ Replace all instances of `hanovalifesciences.com` with your actual domain throug
 ## Files to Update:
 
 ### 1. `/index.html` - Update these lines:
+
 ```html
 <!-- Line 13: Canonical URL -->
 <link rel="canonical" href="https://YOUR-DOMAIN.com/" />
@@ -19,29 +20,34 @@ Replace all instances of `hanovalifesciences.com` with your actual domain throug
 <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
 <!-- In JSON-LD Organization schema (around line 54+) -->
-"url": "https://YOUR-DOMAIN.com",
-"logo": "https://YOUR-DOMAIN.com/logo.png",
+"url": "https://YOUR-DOMAIN.com", "logo": "https://YOUR-DOMAIN.com/logo.png",
 
 <!-- In JSON-LD WebSite schema -->
 "url": "https://YOUR-DOMAIN.com",
 ```
 
 ### 2. `/public/robots.txt` - Update:
+
 ```text
 Line 15: Sitemap: https://YOUR-DOMAIN.com/sitemap.xml
 ```
 
 ### 3. `/public/sitemap.xml` - Update ALL:
+
 Replace all instances of:
+
 ```xml
 https://hanovalifesciences.com/
 ```
+
 With:
+
 ```xml
 https://YOUR-DOMAIN.com/
 ```
 
 Example - change this:
+
 ```xml
 <url>
   <loc>https://hanovalifesciences.com/</loc>
@@ -50,6 +56,7 @@ Example - change this:
 ```
 
 To this:
+
 ```xml
 <url>
   <loc>https://YOUR-DOMAIN.com/</loc>
@@ -62,6 +69,7 @@ To this:
 ## Example Search & Replace
 
 ### For VS Code:
+
 1. Press `Ctrl+H` (or `Cmd+H` on Mac)
 2. In "Find" field: `hanovalifesciences.com`
 3. In "Replace" field: `YOUR-DOMAIN.com`

@@ -14,20 +14,17 @@ const items = [
   {
     name: "Vikram S.",
     role: "Founder, Mumbai",
-    quote:
-      "Focus without the crash. The Bacopa blend keeps me sharp through long meetings.",
+    quote: "Focus without the crash. The Bacopa blend keeps me sharp through long meetings.",
   },
   {
     name: "Pooja K.",
     role: "Marathoner, Hyderabad",
-    quote:
-      "Sachet form factor is genius. I carry Hanova wherever I run — instant clean energy.",
+    quote: "Sachet form factor is genius. I carry Hanova wherever I run — instant clean energy.",
   },
   {
     name: "Rahul M.",
     role: "Creative Director, Delhi",
-    quote:
-      "Premium feel, honest ingredients. It's the wellness brand I've been waiting for.",
+    quote: "Premium feel, honest ingredients. It's the wellness brand I've been waiting for.",
   },
 ];
 
@@ -56,8 +53,7 @@ export function Testimonials() {
               transition={{ duration: 0.8, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
               className="mt-4 text-4xl sm:text-5xl lg:text-6xl text-charcoal"
             >
-              Loved by the{" "}
-              <span className="text-gradient-honey italic">wellness-led</span>.
+              Loved by the <span className="text-gradient-honey italic">wellness-led</span>.
             </motion.h2>
           </div>
         </div>

@@ -1,4 +1,10 @@
-export function HoneyDivider({ flip = false, color = "#F5E8C7" }: { flip?: boolean; color?: string }) {
+export function HoneyDivider({
+  flip = false,
+  color = "#F5E8C7",
+}: {
+  flip?: boolean;
+  color?: string;
+}) {
   return (
     <div className={`w-full overflow-hidden leading-[0] ${flip ? "rotate-180" : ""}`}>
       <svg
