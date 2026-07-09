@@ -8,7 +8,7 @@ const outcomes = [
   { label: "Focus", img: focusImg },
   { label: "Calm", img: calmImg },
   { label: "Energy", img: energyImg },
-  { label: "Glow", img: glowImg }
+  { label: "Glow", img: glowImg },
 ];
 
 export function Experience() {
@@ -45,9 +45,8 @@ export function Experience() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mt-8 max-w-xl text-lg text-muted-foreground"
           >
-            We build products around the moments that matter — focus before a meeting, calm
-            after a long day, energy on the move. The science is the means; the feeling is
-            the product.
+            We build products around the moments that matter — focus before a meeting, calm after a
+            long day, energy on the move. The science is the means; the feeling is the product.
           </motion.p>
         </div>
 
@@ -67,9 +66,9 @@ export function Experience() {
                 }`}
               >
                 {/* Background Image */}
-                <img 
-                  src={item.img} 
-                  alt={item.label} 
+                <img
+                  src={item.img}
+                  alt={item.label}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
                 />

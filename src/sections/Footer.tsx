@@ -21,8 +21,8 @@ export function Footer() {
           <div className="md:col-span-4">
             <img src={logo} alt="Hanova" className="h-10 w-auto" />
             <p className="mt-5 text-sm text-cream/70 max-w-sm">
-              Nature, simplified for everyday life. Plant-based functional honey sachets
-              crafted for instant wellness — convenience × hygiene × pure outcomes.
+              Nature, simplified for everyday life. Plant-based functional honey sachets crafted for
+              instant wellness — convenience × hygiene × pure outcomes.
             </p>
             <div className="mt-6 flex gap-3">
               {[FaInstagram, FaFacebookF, FaLinkedinIn, FaXTwitter].map((Icon, i) => (

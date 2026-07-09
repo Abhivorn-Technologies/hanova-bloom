@@ -3,12 +3,28 @@ import { Sparkles, FlaskRound, ShieldCheck, BadgeCheck, Battery, Briefcase } fro
 import whyHanovaLifestyle from "@/assets/lifestyle-ginger-turmeric.png";
 
 const points = [
-  { icon: Sparkles, title: "Premium Ingredients", text: "Hand-selected botanicals and pure honey at the source." },
-  { icon: FlaskRound, title: "Nutraceutical Science", text: "Formulated by experts, validated by results." },
-  { icon: ShieldCheck, title: "Hygienic Sachets", text: "Single-serve packaging that preserves potency." },
+  {
+    icon: Sparkles,
+    title: "Premium Ingredients",
+    text: "Hand-selected botanicals and pure honey at the source.",
+  },
+  {
+    icon: FlaskRound,
+    title: "Nutraceutical Science",
+    text: "Formulated by experts, validated by results.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Hygienic Sachets",
+    text: "Single-serve packaging that preserves potency.",
+  },
   { icon: BadgeCheck, title: "Trusted Wellness", text: "Transparent sourcing, traceable batches." },
   { icon: Battery, title: "Instant Energy", text: "A spoonful of focus, anytime, anywhere." },
-  { icon: Briefcase, title: "Lifestyle Friendly", text: "Built for movement, travel, and busy mornings." },
+  {
+    icon: Briefcase,
+    title: "Lifestyle Friendly",
+    text: "Built for movement, travel, and busy mornings.",
+  },
 ];
 
 export function WhyHanova() {
@@ -53,8 +69,8 @@ export function WhyHanova() {
             className="lg:col-span-4"
           >
             <p className="text-lg text-muted-foreground leading-relaxed">
-              We blend ancient botanical wisdom with modern nutraceutical engineering — so
-              your wellness routine fits seamlessly into the way you actually live.
+              We blend ancient botanical wisdom with modern nutraceutical engineering — so your
+              wellness routine fits seamlessly into the way you actually live.
             </p>
           </motion.div>
           <motion.div
@@ -64,7 +80,12 @@ export function WhyHanova() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="lg:col-span-3 aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border border-honey/15 hover:scale-[1.02] transition-transform duration-500 bg-white"
           >
-            <img src={whyHanovaLifestyle} alt="Hanova Premium Sachet Lifestyle" className="w-full h-full object-cover" loading="lazy" />
+            <img
+              src={whyHanovaLifestyle}
+              alt="Hanova Premium Sachet Lifestyle"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
           </motion.div>
         </div>
 
@@ -91,9 +112,7 @@ export function WhyHanova() {
               <h3 className="mt-5 font-sans font-bold text-lg text-charcoal group-hover:text-honey-deep transition-colors duration-300">
                 {p.title}
               </h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                {p.text}
-              </p>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{p.text}</p>
 
               {/* Bottom honey accent line */}
               <div className="absolute bottom-0 left-6 right-6 h-[2px] bg-gradient-to-r from-honey via-honey-deep to-transparent scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 rounded-full" />

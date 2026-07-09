@@ -53,12 +53,11 @@ export function Products() {
             Our Products
           </p>
           <h2 className="mt-4 text-3xl sm:text-5xl lg:text-6xl">
-            Functional honey,{" "}
-            <span className="text-gradient-honey italic">redefined</span>.
+            Functional honey, <span className="text-gradient-honey italic">redefined</span>.
           </h2>
           <p className="mt-5 text-cream/70 text-base sm:text-lg">
-            A curated collection of plant-forward honey concentrates — each crafted for a
-            specific moment in your day.
+            A curated collection of plant-forward honey concentrates — each crafted for a specific
+            moment in your day.
           </p>
         </motion.div>
 
@@ -107,12 +106,8 @@ export function Products() {
                     />
                   </div>
                   <div className="mt-5">
-                    <div className="text-[11px] tracking-widest uppercase text-honey">
-                      {p.tag}
-                    </div>
-                    <h3 className="mt-1 font-display text-xl sm:text-2xl text-cream">
-                      {p.name}
-                    </h3>
+                    <div className="text-[11px] tracking-widest uppercase text-honey">{p.tag}</div>
+                    <h3 className="mt-1 font-display text-xl sm:text-2xl text-cream">{p.name}</h3>
                     <p className="mt-2 text-sm text-cream/70">{p.desc}</p>
                   </div>
                 </div>

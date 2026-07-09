@@ -8,7 +8,12 @@ import type { ReactNode } from "react";
 export function Layout({ children }: { children: ReactNode }) {
   return (
     <div className="overflow-x-hidden relative">
-      <img src={honeyDrip} alt="" className="absolute top-0 right-0 w-32 sm:w-48 lg:w-64 xl:w-80 pointer-events-none z-10 drop-shadow-md" aria-hidden="true" />
+      <img
+        src={honeyDrip}
+        alt=""
+        className="absolute top-0 right-0 w-32 sm:w-48 lg:w-64 xl:w-80 pointer-events-none z-10 drop-shadow-md"
+        aria-hidden="true"
+      />
       <ScrollProgress />
       <Navbar />
       <main>{children}</main>
@@ -33,7 +38,9 @@ export function PageHeader({
 }) {
   return (
     /* <section className={`relative overflow-hidden pt-40 pb-24 sm:pt-48 sm:pb-32 ${!bgImage ? 'bg-cream' : ''}`}> */
-    <section className={`relative overflow-hidden pt-40 pb-24 sm:pt-48 sm:pb-32 ${!bgImage ? 'bg-white' : ''}`}>
+    <section
+      className={`relative overflow-hidden pt-40 pb-24 sm:pt-48 sm:pb-32 ${!bgImage ? "bg-white" : ""}`}
+    >
       {/* Background Image rendered as a standard img tag for robust Vite resolution */}
       {bgImage && (
         <img
@@ -53,15 +60,15 @@ export function PageHeader({
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 z-20">
         {eyebrow && (
-          <p className="text-xs tracking-[0.3em] uppercase font-bold text-honey-deep">
-            {eyebrow}
-          </p>
+          <p className="text-xs tracking-[0.3em] uppercase font-bold text-honey-deep">{eyebrow}</p>
         )}
         <h1 className="mt-3 text-4xl sm:text-6xl lg:text-7xl leading-[1.05] max-w-4xl text-charcoal">
           {title}
         </h1>
         {subtitle && (
-          <p className="mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-charcoal/80">{subtitle}</p>
+          <p className="mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-charcoal/80">
+            {subtitle}
+          </p>
         )}
       </div>
     </section>

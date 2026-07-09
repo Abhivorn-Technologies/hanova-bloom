@@ -5,7 +5,11 @@ const items = [
   { icon: Leaf, title: "100% Natural", text: "Sourced from nature, never synthetic." },
   { icon: Sprout, title: "Plant-Based", text: "Botanical formulations rooted in tradition." },
   { icon: Zap, title: "Instant Wellness", text: "Effortless rituals for daily energy." },
-  { icon: FlaskConical, title: "Functional Nutrition", text: "Science-led blends with measurable outcomes." },
+  {
+    icon: FlaskConical,
+    title: "Functional Nutrition",
+    text: "Science-led blends with measurable outcomes.",
+  },
   { icon: Ban, title: "No Added Sugar", text: "Pure sweetness from honey and botanicals." },
   { icon: Package, title: "Sachet Convenience", text: "Portable, hygienic, ready when you are." },
 ];
@@ -22,8 +26,8 @@ export function Philosophy() {
             Crafted with <span className="text-gradient-honey italic">intention</span>.
           </h2>
           <p className="mt-5 text-muted-foreground">
-            Every ingredient, every drop, every sachet is engineered to deliver outcomes —
-            not just nutrition.
+            Every ingredient, every drop, every sachet is engineered to deliver outcomes — not just
+            nutrition.
           </p>
         </div>
 

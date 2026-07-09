@@ -5,7 +5,6 @@ import heroProduct from "@/assets/product-lemon.png";
 import heroProductAlt from "@/assets/product-ginger-turmeric.png";
 import heroProductThird from "@/assets/product-butterfly-pea.png";
 
-
 export function Hero() {
   const [step, setStep] = useState(0);
 
@@ -19,8 +18,6 @@ export function Hero() {
 
   return (
     <section id="top" className="relative min-h-screen pt-28 pb-20 overflow-hidden bg-white">
-
-
       {/* Floating honey drops - commented out per request to keep current color combination available 
       <motion.div
         aria-hidden
@@ -56,8 +53,7 @@ export function Hero() {
             transition={{ duration: 0.9, delay: 0.1 }}
             className="mt-6 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-[1.1] text-charcoal"
           >
-            Nature{" "}
-            <span className="text-gradient-honey italic">Simplified</span>
+            Nature <span className="text-gradient-honey italic">Simplified</span>
             <br />
             For Everyday Life
           </motion.h1>
@@ -68,8 +64,8 @@ export function Hero() {
             transition={{ duration: 0.9, delay: 0.3 }}
             className="mt-6 max-w-xl text-lg text-muted-foreground"
           >
-            Premium functional wellness crafted with nature and science. Plant-based
-            honey concentrates, designed for the rhythm of modern living.
+            Premium functional wellness crafted with nature and science. Plant-based honey
+            concentrates, designed for the rhythm of modern living.
           </motion.p>
 
           <motion.div
@@ -106,9 +102,7 @@ export function Hero() {
             ].map((s) => (
               <div key={s.v}>
                 <div className="font-display text-3xl text-honey-deep">{s.k}</div>
-                <div className="text-xs uppercase tracking-widest text-muted-foreground">
-                  {s.v}
-                </div>
+                <div className="text-xs uppercase tracking-widest text-muted-foreground">{s.v}</div>
               </div>
             ))}
           </motion.div>
@@ -129,13 +123,13 @@ export function Hero() {
 
             {/* Carousel: center→left, left→right, right→center */}
             {[
-              { src: heroProduct,      alt: "Hanova Lemon Infused Honey" },
+              { src: heroProduct, alt: "Hanova Lemon Infused Honey" },
               { src: heroProductThird, alt: "Hanova Butterfly Pea Honey" },
-              { src: heroProductAlt,   alt: "Hanova Ginger Turmeric Honey" },
+              { src: heroProductAlt, alt: "Hanova Ginger Turmeric Honey" },
             ].map((p, i) => {
               const slot = getSlot(i);
               const isCenter = slot === 0;
-              const isLeft   = slot === 1;
+              const isLeft = slot === 1;
               return (
                 <motion.img
                   key={p.alt}
